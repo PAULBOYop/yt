@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .page {
+            height: 100vh;
+            width: 100vw;
+            background: #0f0f0f;
+            margin: 5
+        }
+        nav {
+            height: 5vw;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            /* background: red; */
+            padding:  30px;
+           
+        }
+        .left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .left img{
+            height: 60px;
+        }
+        .left a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.9rem;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            /* background: red; */
+            border: none;
+            width: 50%;
+            /* height: 100px; */
+        }
+        .take {
+            /* background: pink; */
+            width: 80%;
+            display: flex;
+            border: none;
+            align-items: center;
+            border-top-right-radius: 20px ;
+            border-bottom-right-radius: 20px ;
+            border-top-left-radius: 20px ;
+            border-bottom-left-radius: 20px ;
+            border: 1px solid #000000ab;
+            background: #222222;
+
+        }
+        .center input {
+            width: 100%; /* Adjusted the width to 100% */
+            padding: 12px;
+            border-bottom-left-radius: 20px ;
+            border-top-left-radius: 20px ;
+            border: none;
+            border: 1px solid #242424;
+            background: #0f0f0f;
+            color: #888585;
+        }
+        .center input:active{
+            /* border: 1px solid #222222; */
+        }
+        .profile {
+            height: 2.3rem;
+            width: 2.3rem;
+            border-radius: 50%;
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            gap: 20px;
+        }
+        .right ion-icon {
+            font-size: 1.5rem;
+            border-radius: 50%;
+            /* background:  #3f3e3eab; */
+            font-size: 1.3rem;
+            cursor: pointer;
+            padding: 9px;
+        }
+        .take ion-icon{
+            font-size: 1.3rem;
+            width: 100px;
+            cursor: pointer;
+
+            
+        }
+        .take:hover{
+            background: #696969ab;    
+            /* width: 100px; */
+            }
+        .mic:hover{
+            cursor: pointer;
+            background: #707070;
+        }
+        .mic{
+            border-radius: 50%;
+            background:  #3f3e3eab;
+            font-size: 1.3rem;
+            padding: 9px;
+            font-weight: 900;
+            margin-left: 10px;
+            
+        }
+        .right ion-icon:hover{
+            border-radius: 50%;
+            background:  #3f3e3eab;
+            font-size: 1.3rem;
+            padding: 9px;
+        }
+        .hero{
+            color: #fff;
+            height: 450px;
+            width: 100%;
+            display: flex;
+            /* background: red; */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 20px 0;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+        .hero>a>button{
+            border-radius: 20px;
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            border: .1px solid #666565;
+            color: #3ea6ff;
+            cursor: pointer;
+        }
+        .hero>a>button:hover{
+            background: #3ea5ff46;
+        }
+        @media (max-width:590px) {
+        .take input{
+            display: none;
+            /* background: red; */
+        }         
+        .take ion-icon{
+            height: 100%;
+        }   
+        .left>.ion{
+            display: block;
+            /* opacity: 1; */
+        }
+        .center{
+            display: none;
+        }
+        }
+        
+        
+         @media (min-width: 591px) {
+           
+        .left>.ion:hover{
+            cursor: pointer;
+            background: #707070;       
+         }
+    }
+    @media (max-width: 590px) {
+        .left>.ion{
+            color: #ffffff;
+            /* background: red; */
+            border-radius: 50%;
+            font-size: 1.5rem;
+            padding: 10px;
+            
+        }
+        .right{
+            gap: 0px;
+        }
+        .left {
+            font-size: 1rem;
+        }
+
+        @media (min-width: 591px) {
+            .left .ion {
+                display: none; 
+            }
+        }
+    }
+        </style>
+</head>
+<body>
+<div class="page">
+    <nav>
+        <div class="left">
+            <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
+            <img src="yt.png" alt="">
+            <ion-icon class="ion" name="search-outline"></ion-icon>
+            
+
+        </div>
+        <div class="center">
+            <div class="take">
+                <input type="text" placeholder="Search">
+                <ion-icon name="search-outline"></ion-icon>
+            </div>
+            <ion-icon  class="mic"name="mic"></ion-icon>
+        </div>
+        <div class="right">
+            <ion-icon name="videocam-outline"></ion-icon>
+            <ion-icon name="notifications-outline"></ion-icon>
+            <img class="profile" src="https://yt3.ggpht.com/9k7LGq8Hrd19yVRwZJN-g4Vsnsl0WF9sHbnvBu0DmG0EfLQcf8MtQyUjlZtMD922LC9uURmLgA=s88-c-k-c0x00ffffff-no-rj" alt="">
+        </div>
+    </nav>
+    <div class="hero">
+           <img src="off.png" alt="">
+           <p style="font-size: 1.5rem;">You Are Offline</p>
+           <p style="font-size: .9rem; margin: 0 30px; text-align: center;">Please check your connection or watch your downloaded videos.</p>
+           <a href="https://www.youtube.com/feed/downloads"><button>Go to downloads</button></a>
+    </div>
+</div>
+</body>
+</html>
